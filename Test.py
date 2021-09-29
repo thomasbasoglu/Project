@@ -1,5 +1,3 @@
-from decimal import Decimal
-import decimal
 def kdv():
     price = float(input('Fiyatı ekle: '))
     kdv = int(input('kdv oranını ekle: '))
