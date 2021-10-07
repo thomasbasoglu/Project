@@ -9,6 +9,7 @@ class Product:
         self.price = price
         self.kdv = kdv
 
+
     def kdv(price, kdv):
         try:    
             kdvVals = [1,8,10,18]    
@@ -20,11 +21,15 @@ class Product:
                 raise vergiError
         except vergiError:
             print('Vergiyi doğru yazdığınıza emin olun')
+    def toString(self):
+        print('Fiyatı ' + str(self.price) + ' olan ve ' + str(self.kdv) 
+    + ' kdv ye tabi tutulan ürünün \n' + 'matrahı: ' + str(kdv(self.price,self.kdv)))
+
 
 price = float(input('Fiyatı ekle: '))
 kdv = int(input('kdv oranını ekle: '))
 
-Product(price, kdv)
+Product(price, kdv).toString()
 
 
 
