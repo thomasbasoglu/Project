@@ -6,12 +6,7 @@ class Product:
         self.kdv = kdv      
         self.mat = price / (1 + int(kdv)/100) #1.18 çarp 
         self.kdvVal = price - self.mat 
-        
-    
-
-        
-    
-        
+          
     def toString(self):
         print('Fiyatı ' + str(self.price) + ' olan ve ' + str(self.kdv)
             + ' kdv ye tabi tutulan ürünün \n' + 'matrahı: ' + str(round(self.mat*100)/100) + 
@@ -24,7 +19,7 @@ class Product:
         kdv70 = round(self.kdvVal*70/100*100)/100
         
         KKEG = mat30 + kdv30
-        table = [[' ', 'Toplam', 70, 30],['Toplam', price, self.price*70/100, self.price*30/100], 
+        table = [[' ', 'Toplam', '%70', '%30'],['Toplam', price, self.price*70/100, self.price*30/100], 
                       ['Matrah', round(self.mat*100)/100, mat70, mat30], 
                       ['KDV',round(self.kdvVal*100)/100, kdv70, kdv30]]
     
@@ -41,14 +36,14 @@ while True:
     price = float(input('Fiyatı ekle: '))
     kdv = input('kdv oranını ekle: ')
     product = Product(price, kdv)    
-    product.toString()
+
     type = input('\nBinek araç ise 1e, ticari araç ise 2ye, hiçbiri değil ise 3e basınız: ')
 
     if int(type) == 1:
         product.KKEG()
 
     if type == 2:
-        print(2)
+        product.toString()
 
     if type == 3:
         print(3)
